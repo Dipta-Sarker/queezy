@@ -1,14 +1,18 @@
 import React from 'react';
 import './SingleQuiz.css';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 const SingleQuiz = ({quiz}) => {
     const addToClickHandler = (id) =>{
         const correctAnswer = quiz.correctAnswer;
         
         if(id === correctAnswer){
-            alert('It Is The Correct Answer')
+            
+            toast('It Is The Correct Answer !!',{position: "top-center"});
         }
         else{
-            alert("It Is The Wrong Answer")
+            
+            toast('It Is The Wrong Answer !!',{position: "top-center"});
         }
         
 
@@ -29,6 +33,7 @@ const SingleQuiz = ({quiz}) => {
                     <button onClick={()=>addToClickHandler(quiz.options[3])} className='btn-quiz'>
                     {quiz.options[3]}
                     </button>
+                    <ToastContainer />
               
             </div>
         </div>
