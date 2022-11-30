@@ -4,11 +4,17 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import Main from './Layouts/Main';
 import Home from './components/Home/Home';
+import Quiz from './components/Quiz/Quiz'
 
 
 const router = createBrowserRouter([
   {path:'/', element:<Main></Main>, children:[
-    {path:'/', element:<Home></Home>}
+    {path:'/', 
+    loader:() => fetch('https://openapi.programming-hero.com/api/quiz') 
+    ,element:<Home></Home>},
+    {path:'/quiz/:id', 
+    loader: ({ params}) => fetch(`https://openapi.programming-hero.com/api/quiz/${params.id}`)
+    ,element:<Quiz></Quiz>}
   ]},
   {path:'*', element:<h1>Error: 404 . Page Not Found !!</h1>}
 ])
