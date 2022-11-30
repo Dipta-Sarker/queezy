@@ -1,0 +1,24 @@
+.quiz{
+    box-shadow: 3px 5px 16px grey;
+    border-radius: 10px;
+    margin: 40px;
+    padding:20px
+}
+.quiz-div{
+    border: 2px solid rgb(112, 83, 243);
+    margin: 10px 50px;
+    border-radius: 10px;
+}
+
+.title{
+    margin: 30px 0;
+}
+.btn-quiz{
+    width: 70%;
+    margin: 10px 0;
+    padding: 20px;
+    font-weight: bold;
+}
+.btn-quiz:hover{
+    background-color: palevioletred;
+}

@@ -1,5 +1,6 @@
 import React from 'react';
 import { useLoaderData } from 'react-router-dom';
+import SingleQuiz from '../SingleQuiz/SingleQuiz';
 
 const Quiz = () => {
     const singleQuiz = useLoaderData()
@@ -7,7 +8,9 @@ const Quiz = () => {
     console.log(questions)
     return (
         <div>
-            <h1>{questions.length}</h1>
+            {
+                questions.map(quiz => <SingleQuiz key={quiz.id} quiz={quiz}></SingleQuiz>)
+            }
         </div>
     );
 };
