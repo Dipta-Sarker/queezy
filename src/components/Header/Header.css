@@ -1,0 +1,10 @@
+.header{
+    display: flex;
+    justify-content: space-between;
+    margin: 0 30px;
+}
+.link{
+    margin: 0 10px;
+    font-size: 18px;
+    text-decoration: none;
+}
